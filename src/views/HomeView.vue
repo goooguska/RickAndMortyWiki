@@ -1,5 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCharacterStore } from '@/stores/characterStore'
+
+const characterStore = useCharacterStore()
+function a() {
+  characterStore.getCharactersFormAPI()
+}
+</script>
 
 <template>
-  <main></main>
+  <div>
+    <h2>Персонажи</h2>
+
+    <button @click="a">adadad</button>
+  </div>
 </template>
