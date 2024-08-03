@@ -1,14 +1,14 @@
 export type ICharacter = {
-  created: String
-  episode: String[]
-  gender: String
-  id: Number
-  image: String
-  location: { name: String; url: String }
-  name: String
-  origin: { name: String; url: String }
-  species: String
-  status: String
-  type: String
-  url: String
+  created: string
+  episode: string[]
+  gender: string
+  id: number
+  image: string
+  location: { name: string; url: string }
+  name: string
+  origin: { name: string; url: string }
+  species: string
+  status: string
+  type: string
+  url: string
 }
