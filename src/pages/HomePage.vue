@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import CharacterCard from '@/components/CharacterCard.vue'
+import { useIntersectionObserver } from '@/composables/intersectionObserver'
 import { useCharacterStore } from '@/stores/characterStore'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 const characterStore = useCharacterStore()
-onMounted(async () => {
-  characterStore.getCharactersFromAPI()
+const observer = ref<HTMLDivElement | null>(null)
+onMounted(() => {
+  useIntersectionObserver(characterStore.getMoreCharactersFromAPI, observer.value)
 })
 </script>
 
@@ -17,7 +19,9 @@ onMounted(async () => {
           <CharacterCard :character />
         </li>
       </ul>
+      <div ref="observer" class="observer"></div>
     </template>
+
     <template v-else>Данных нет</template>
   </div>
 </template>
