@@ -15,7 +15,6 @@ export const useCharacterStore = defineStore('characterStore', () => {
     pageNumber.value += 1
     const data = await useMoreItemsFromAPI('character', pageNumber.value)
     characters.value = [...characters.value, ...data.results]
-    console.log(characters.value)
   }
   return { characters, getCharactersFromAPI, getMoreCharactersFromAPI }
 })

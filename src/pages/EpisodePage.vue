@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import EpisodeCard from '@/components/EpisodeCard.vue'
+import { useIntersectionObserver } from '@/composables/intersectionObserver'
 import { useEpisodeStore } from '@/stores/episodeStore'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 const episodeStore = useEpisodeStore()
+const observer = ref<HTMLDivElement | null>(null)
 onMounted(async () => {
-  episodeStore.getEpisodesFromAPI()
+  useIntersectionObserver(episodeStore.getMoreEpisodesFromAPI, observer.value)
 })
 </script>
 
@@ -17,6 +19,7 @@ onMounted(async () => {
           <EpisodeCard :episode />
         </li>
       </ul>
+      <div ref="observer" class="observer"></div>
     </template>
     <template v-else>Данных нет</template>
   </div>

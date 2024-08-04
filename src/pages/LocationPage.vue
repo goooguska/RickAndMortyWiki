@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import LocationCard from '@/components/LocationCard.vue'
+import { useIntersectionObserver } from '@/composables/intersectionObserver'
 import { useLocationStore } from '@/stores/locationStore'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 const locationStore = useLocationStore()
+const observer = ref<HTMLDivElement | null>(null)
 onMounted(async () => {
-  locationStore.getLocationsFromAPI()
+  useIntersectionObserver(locationStore.getMoreLocationsFromAPI, observer.value)
 })
 </script>
 
@@ -17,7 +19,9 @@ onMounted(async () => {
           <LocationCard :location />
         </li>
       </ul>
+      <div ref="observer" class="observer"></div>
     </template>
+
     <template v-else>Данных нет</template>
   </div>
 </template>

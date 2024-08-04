@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { useCharacterStore } from './stores/characterStore'
 import HeaderTemplate from './templates/HeaderTemplate.vue'
-const characterStore = useCharacterStore()
-onMounted(async () => {})
 </script>
 
 <template>
-  <div class="container">
+  <div class="container px-2.5">
     <HeaderTemplate />
     <main>
       <router-view></router-view>
@@ -15,9 +11,4 @@ onMounted(async () => {})
   </div>
 </template>
 
-<style scoped>
-.observer {
-  height: 30px;
-  background-color: aqua;
-}
-</style>
+<style scoped></style>
