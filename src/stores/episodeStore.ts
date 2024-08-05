@@ -10,12 +10,11 @@ export const useEpisodeStore = defineStore('episodeStore', () => {
   async function getEpisodesFromAPI() {
     const data = await useItemsFromAPI('episode')
     episodes.value = [...data.results]
-    console.log(episodes.value)
   }
   async function getMoreEpisodesFromAPI() {
     pageNumber.value += 1
     const data = await useMoreItemsFromAPI('episode', pageNumber.value)
-    episodes.value = [...episodes.value, ...data.results]
+    episodes.value = [...episodes.value, ...(data.results as IEpisode[])]
   }
   return { episodes, getEpisodesFromAPI, getMoreEpisodesFromAPI }
 })

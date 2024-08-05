@@ -15,7 +15,7 @@ export const useLocationStore = defineStore('locationStore', () => {
   async function getMoreLocationsFromAPI() {
     pageNumber.value += 1
     const data = await useMoreItemsFromAPI('location', pageNumber.value)
-    locations.value = [...locations.value, ...data.results]
+    locations.value = [...locations.value, ...(data.results as ILocation[])]
   }
 
   return { locations, getLocationsFromAPI, getMoreLocationsFromAPI }

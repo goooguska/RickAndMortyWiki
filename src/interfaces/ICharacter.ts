@@ -1,4 +1,4 @@
-export type ICharacter = {
+export interface ICharacter {
   created: string
   episode: string[]
   gender: string
