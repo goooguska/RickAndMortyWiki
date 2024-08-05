@@ -1,6 +1,6 @@
-import { useItemsFromAPI } from '@/composables/itemsFromAPI'
-import { useMoreItemsFromAPI } from '@/composables/moreItemsFromAPI'
 import type { ILocation } from '@/interfaces/ILocation'
+import { useItemsFromAPI } from '@/services/itemsFromAPI'
+import { useMoreItemsFromAPI } from '@/services/moreItemsFromAPI'
 import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
 export const useLocationStore = defineStore('locationStore', () => {

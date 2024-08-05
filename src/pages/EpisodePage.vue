@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import EpisodeCard from '@/components/EpisodeCard.vue'
-import { useIntersectionObserver } from '@/composables/intersectionObserver'
 import { useEpisodeStore } from '@/stores/episodeStore'
+import { useIntersectionObserver } from '@/utils/intersectionObserver'
 import { onMounted, ref } from 'vue'
 const episodeStore = useEpisodeStore()
 const observer = ref<HTMLDivElement | null>(null)

@@ -8,8 +8,27 @@
   box-sizing: border-box;
 }
 #app {
-  max-width: 375px;
+  max-width: 1440px;
   width: 100%;
   margin: 10px auto;
   font-family: 'JetBrains Mono', sans-serif;
+  @apply text-primary;
+}
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 98vh;
+}
+main {
+  grid-row: 2;
+}
+
+footer {
+  grid-row: 3;
+}
+p {
+  @apply text-base xxs:text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl xxl:text-3xl;
+}
+h2 {
+  @apply text-base xxs:text-base sm:text-base md:text-xl lg:text-2xl xl:text-3xl xxl:text-4xl;
 }

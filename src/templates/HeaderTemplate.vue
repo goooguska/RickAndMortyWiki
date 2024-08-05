@@ -3,7 +3,7 @@ import NavigationBar from '@/components/NavigationBar.vue'
 </script>
 
 <template>
-  <header>
+  <header class="sticky top-0 py-7 bg-white">
     <router-link to="/">
       <div class="logo flex items-center gap-2 justify-center">
         <img src="../assets/icon.svg" alt="Иконка" />
@@ -14,3 +14,5 @@ import NavigationBar from '@/components/NavigationBar.vue'
     <NavigationBar />
   </header>
 </template>
+
+<style scoped></style>

@@ -1,6 +1,6 @@
-import { useItemsFromAPI } from '@/composables/itemsFromAPI'
-import { useMoreItemsFromAPI } from '@/composables/moreItemsFromAPI'
 import type { ICharacter } from '@/interfaces/ICharacter'
+import { useItemsFromAPI } from '@/services/itemsFromAPI'
+import { useMoreItemsFromAPI } from '@/services/moreItemsFromAPI'
 import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
 export const useCharacterStore = defineStore('characterStore', () => {

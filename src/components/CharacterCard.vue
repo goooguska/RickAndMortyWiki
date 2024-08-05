@@ -6,8 +6,12 @@ defineProps<{ character: ICharacter }>()
 
 <template>
   <router-link :to="'/character/' + character.id">
-    <div class="flex items-center gap-2 rounded-lg bg-red-200">
-      <img class="w-1/5 rounded-lg" :src="character.image" alt="character-image" />
+    <div class="rounded-lg text-center">
+      <img
+        class="max-w-[320] w-3/4 rounded-lg mx-auto my-0"
+        :src="character.image"
+        alt="character-image"
+      />
       <p>{{ character.name }}</p>
     </div>
   </router-link>

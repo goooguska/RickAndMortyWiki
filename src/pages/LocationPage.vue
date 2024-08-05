@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import LocationCard from '@/components/LocationCard.vue'
-import { useIntersectionObserver } from '@/composables/intersectionObserver'
 import { useLocationStore } from '@/stores/locationStore'
+import { useIntersectionObserver } from '@/utils/intersectionObserver'
 import { onMounted, ref } from 'vue'
 const locationStore = useLocationStore()
 const observer = ref<HTMLDivElement | null>(null)
@@ -14,7 +14,7 @@ onMounted(async () => {
   <div>
     <h2 class="text-center my-10">Локации</h2>
     <template v-if="locationStore.locations">
-      <ul class="flex flex-col gap-2">
+      <ul class="max-w-[1300px] flex flex-col mx-auto my-0 gap-y-2.5">
         <li v-for="location in locationStore.locations" :key="location.id">
           <LocationCard :location />
         </li>
