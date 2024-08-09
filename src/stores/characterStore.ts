@@ -1,20 +1,22 @@
 import type { ICharacter } from '@/interfaces/ICharacter'
-import { useItemsFromAPI } from '@/services/itemsFromAPI'
 import { useMoreItemsFromAPI } from '@/services/moreItemsFromAPI'
 import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
 export const useCharacterStore = defineStore('characterStore', () => {
-  const characters: Ref<ICharacter[]> = ref([])
   const pageNumber = ref(0)
+  const characters: Ref<ICharacter[]> = ref([])
 
-  async function getCharactersFromAPI() {
-    const data = await useItemsFromAPI('character')
-    characters.value = [...data.results]
+  const charactersFromLocalStorage = localStorage.getItem('characters')
+  if (charactersFromLocalStorage !== null) {
+    const parsedCharactersFromLocalStorage = JSON.parse(charactersFromLocalStorage)
+    characters.value = parsedCharactersFromLocalStorage
   }
+
   async function getMoreCharactersFromAPI() {
     pageNumber.value += 1
     const data = await useMoreItemsFromAPI('character', pageNumber.value)
     characters.value = [...characters.value, ...(data.results as ICharacter[])]
+    localStorage.setItem('characters', JSON.stringify(characters.value))
   }
-  return { characters, getCharactersFromAPI, getMoreCharactersFromAPI }
+  return { characters, getMoreCharactersFromAPI }
 })

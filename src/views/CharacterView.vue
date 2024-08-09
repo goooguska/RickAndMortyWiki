@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { useCharacterStore } from '@/stores/characterStore'
-import { useItemByID } from '@/utils/itemByID'
+import { useLoadItem } from '@/utils/loadItem'
 import { onMounted, ref } from 'vue'
-const characterStore = useCharacterStore()
 const props = defineProps({
   id: {
     type: String,
@@ -10,8 +9,9 @@ const props = defineProps({
   }
 })
 const character = ref()
-onMounted(() => {
-  character.value = useItemByID(props.id, characterStore.characters)
+const characterStore = useCharacterStore()
+onMounted(async () => {
+  character.value = await useLoadItem(props.id, characterStore.characters, 'character')
 })
 </script>
 

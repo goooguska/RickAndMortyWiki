@@ -1,6 +1,4 @@
-import type { ICharacter } from '@/interfaces/ICharacter'
-import type { IEpisode } from '@/interfaces/IEpisode'
-import type { ILocation } from '@/interfaces/ILocation'
+import type { unionType } from '@/interfaces/unionType'
 
 import axios from 'axios'
 type unionTypeFromAPI = {
@@ -10,7 +8,7 @@ type unionTypeFromAPI = {
     pages: number
     prev: null | string
   }
-  results: [ICharacter | ILocation | IEpisode]
+  results: [unionType]
 }
 
 export async function useMoreItemsFromAPI(
