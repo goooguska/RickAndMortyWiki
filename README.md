@@ -1,39 +1,78 @@
-# RickAndMortyWiki
+## Проект: Rick and Morty Wiki
 
-This template should help get you started developing with Vue 3 in Vite.
+Этот проект представляет собой веб-приложение, созданное с использованием Vue.js 3, TypeScript, Pinia, Axios и Tailwind CSS. Приложение предназначено для отображения данных из [Rick and Morty API](https://rickandmortyapi.com/), предоставляя пользователям возможность просматривать информацию о персонажах, эпизодах и локациях из популярного анимационного сериала "Рик и Морти".
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Технологии
 
-## Type Support for `.vue` Imports in TS
+- **Vue.js 3**: Фронтенд-фреймворк для создания пользовательских интерфейсов.
+- **TypeScript**: Язык программирования, который добавляет статическую типизацию к JavaScript.
+- **Pinia**: Современное решение для управления состоянием в приложениях Vue.
+- **Axios**: Библиотека для выполнения HTTP-запросов.
+- **Tailwind CSS**: Утилитарный CSS-фреймворк для быстрого стилизования интерфейса.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## Установка
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Предварительные требования
 
-## Project Setup
+Перед началом убедитесь, что у вас установлен [Node.js](https://nodejs.org/) (рекомендуется версия 14 или выше).
 
-```sh
-npm install
-```
+### Установка проекта
 
-### Compile and Hot-Reload for Development
+1. Клонируйте этот репозиторий:
 
-```sh
-npm run dev
-```
+   ```bash
+   git clone https://github.com/goooguska/RickAndMortyWiki.git
+   ```
 
-### Type-Check, Compile and Minify for Production
+2. Перейдите в директорию проекта:
 
-```sh
-npm run build
-```
+   ```bash
+   cd RickAndMortyWiki
+   ```
 
-### Lint with [ESLint](https://eslint.org/)
+3. Установите зависимости:
 
-```sh
-npm run lint
-```
+   ```bash
+   npm install
+   ```
+
+4. Запустите приложение:
+
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## Использование
+
+Приложение позволяет вам:
+
+- Просматривать список персонажей из "Рика и Морти".
+- Узнавать информацию о каждом персонаже, включая его имя, статус, вид и происхождение.
+- Исследовать эпизоды и локации, связанные с персонажами.
+
+---
+
+- **components**: Компоненты Vue, используемые в приложении.
+- **router**: Настройка маршрутизации приложения.
+- **store**: Модели и состояния, управляемые с помощью Pinia.
+- **views**: Представления, отображающие различные страницы приложения.
+
+---
+
+## Вклад
+
+Если вы хотите внести свой вклад в проект, пожалуйста, создайте ветку с вашими изменениями и отправьте Pull Request.
+
+---
+
+## Лицензия
+
+Этот проект лицензируется на условиях MIT License.
+
+---
